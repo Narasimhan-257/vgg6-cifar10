@@ -1,0 +1,10 @@
+# Q2(b): vary ONLY the optimizer. lr = -1 -> each optimizer uses its own DEFAULT_LR
+program: train.py
+method: grid
+metric: {name: val_acc, goal: maximize}
+parameters:
+  optimizer: {values: [sgd, nesterov, adam, adagrad, rmsprop, nadam]}
+  lr: {value: -1}
+  activation: {value: relu}
+  batch_size: {value: 128}
+  epochs: {value: 10}

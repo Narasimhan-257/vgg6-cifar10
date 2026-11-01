@@ -1,0 +1,10 @@
+# Q2(a): vary ONLY the activation; everything else is the base configuration
+program: train.py
+method: grid
+metric: {name: val_acc, goal: maximize}
+parameters:
+  activation: {values: [relu, sigmoid, tanh, silu, gelu]}
+  optimizer: {value: nesterov}
+  lr: {value: 0.05}
+  batch_size: {value: 128}
+  epochs: {value: 10}

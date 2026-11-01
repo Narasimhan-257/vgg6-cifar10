@@ -1,0 +1,10 @@
+# Q2(c): batch size (128 is already covered by the base run)
+program: train.py
+method: grid
+metric: {name: val_acc, goal: maximize}
+parameters:
+  batch_size: {values: [64, 256]}
+  activation: {value: relu}
+  optimizer: {value: nesterov}
+  lr: {value: 0.05}
+  epochs: {value: 10}

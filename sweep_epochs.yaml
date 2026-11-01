@@ -1,0 +1,10 @@
+# Q2(c): number of epochs (10 is already covered by the base run)
+program: train.py
+method: grid
+metric: {name: val_acc, goal: maximize}
+parameters:
+  epochs: {values: [5, 20]}
+  activation: {value: relu}
+  optimizer: {value: nesterov}
+  lr: {value: 0.05}
+  batch_size: {value: 128}

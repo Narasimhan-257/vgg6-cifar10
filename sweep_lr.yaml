@@ -1,0 +1,10 @@
+# Q2(c): learning rate (0.05 is already covered by the base run)
+program: train.py
+method: grid
+metric: {name: val_acc, goal: maximize}
+parameters:
+  lr: {values: [0.01, 0.1]}
+  activation: {value: relu}
+  optimizer: {value: nesterov}
+  batch_size: {value: 128}
+  epochs: {value: 10}
